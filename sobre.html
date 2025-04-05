@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style-sobre.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>TECGEO - Georreferenciamento</title>
+    <link rel="icon" href="img/globo.jpg" type="image/png">
+
+</head>
+
+<body>
+    <!-- /*--------------IMAGEM-------------*/
+    /*--------------IMAGEM-------------*/
+    /*--------------IMAGEM-------------*/ -->
+    <section class="imagem">
+        <img src="img/sobre.jpg" alt="">
+        <div class="overlay"></div>
+        <div class="sob-video">
+            <p>REFERÊNCIA EM SERVIÇOS DE GEORREFERENCIAMENTO</p>
+        </div>
+    </section>
+
+    <!-----------------------HEADER----------------->
+    <!-----------------------HEADER----------------->
+    <!-----------------------HEADER----------------->
+    <header class="header">
+        <div class="header-container">
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="historia.html">HISTÓRIA</a>
+                <a href="servicos.html">SERVIÇOS</a>
+                <a href="sobre.html">SOBRE NÓS</a>
+                <a href="contatos.html">CONTATOS</a>
+            </nav>
+
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/globo.jpg" alt="Logo da TecGeo">
+                    <span>TECGEO</span>
+                </a>
+            </div>
+
+            <div class="login">
+                <a href="login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+
+    <section class="sobre">
+        <div class="sobre-content">
+            <div class="sobre-texto">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem error odio unde obcaecati est
+                    temporibus rem nobis delectus, deleniti qui vel aut labore quis, libero mollitia eligendi culpa
+                    consequuntur veniam. <br><br>
+                    Nostrum veritatis harum tempore. Assumenda ipsum molestias in voluptatem illo facere delectus
+                    provident
+                    non quos, eaque odit aut, esse error, praesentium veniam qui aliquid? Quam, perferendis ducimus.
+                    Aliquam, perferendis dolor. <br><br>
+                    Nostrum veritatis harum tempore. Assumenda ipsum molestias in voluptatem illo facere delectus
+                    provident
+                    non quos, eaque odit aut, esse error, praesentium veniam qui aliquid? Quam, perferendis ducimus.
+                    Aliquam, perferendis dolor. <br><br>
+                    Molestiae corporis accusantium architecto esse corrupti voluptate vero nulla labore quos tempore
+                    nemo
+                    assumenda odit necessitatibus reiciendis minima, pariatur animi maiores ab! Sed dolorum officia iste
+                    qui
+                    amet laudantium incidunt?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- /*-----------------------REFERENCIA-----------------
+    /*-----------------------REFERENCIA-----------------
+    /*-----------------------REFERENCIA----------------- -->
+    <section class="referencia">
+        <div class="refer-titulo">
+            <h1>REFERÊNCIA REGIONAL</h1>
+        </div>
+        <div class="refer-texto">
+            <p>Nos orgulhamos de contribuir para o aprimoramento do georreferenciamento, compartilhando conhecimento e
+                boas práticas que fortalecem o setor. Acreditamos que a precisão e a confiabilidade das informações
+                geográficas são fundamentais para o desenvolvimento de projetos e tomadas de decisão.</p>
+        </div>
+        <!-- !-- /*-----------------------IMAGENS-----------------
+    /*-----------------------IMAGENS----------------- -->
+    </section>
+
+    <!-- /*-----------------------ENDEREÇO-----------------
+    /*-----------------------ENDEREÇO-----------------
+    /*-----------------------ENDEREÇO----------------- -->
+    <section class="enderecos">
+        <div class="endereco-texto">
+            <p>NOSSOS ESCRITÓRIOS</p>
+            <p class="cachoeira">Cachoeira-Alta, Goiás</p>
+        </div>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!3m2!1spt-BR!2sbr!4v1739798352513!5m2!1spt-BR!2sbr!6m8!1m7!1si9yw4F063feuQEo5mCT2Bw!2m2!1d-18.75484815057594!2d-50.94383592132571!3f175.22001974056323!4f9.654249491410667!5f0.7820865974627469"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <section class="enderecos">
+        <div class="endereco-texto">
+            <p class="cachoeira">Caçu, Goiás</p>
+        </div>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1740103961443!6m8!1m7!1sYzophXg4M4NVwaKxhNfCTw!2m2!1d-18.56429085121308!2d-51.13669685298346!3f120.73274488285936!4f2.112084128544737!5f0.7820865974627469"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+</body>
+
+</html>
