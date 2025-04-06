@@ -28,23 +28,6 @@
 /*-----------------HEADER-------------*/
 /*-----------------HEADER-------------*/
 
-.hea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hea p {
-    font-size: 20px;
-    letter-spacing: 0.3rem;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-
-.hea a:hover::after {
-    content: none;
-}
-
 .header {
     width: 100vw;
     height: 70px;
@@ -53,7 +36,6 @@
     align-items: center;
     justify-content: center;
     background-color: #000000;
-    margin-bottom: 50px;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -64,23 +46,50 @@
     width: 100%;
     max-width: 1100px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+}
+.hea {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.hea img {
+    width: 3rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.hea p {
+    font-size: 20px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+}
+
+.divide {
+    width: 2px;
+    height: 50px;
+    background-color: white;
+    margin: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 40px;
+    white-space: nowrap;
 }
 
 .header-1 a {
     text-decoration: none;
     color: #ffffff;
     font-size: 1rem;
-    margin-right: 1rem;
     position: relative;
-}
-
-.divide {
-    height: 50px;
-    width: 2px;
-    background-color: #ffffff;
-    margin: 0 1rem;
 }
 
 .header-1 a::after {
@@ -99,19 +108,14 @@
 }
 
 .login {
-    margin-left: 2rem;
+    margin-left: auto;
+    padding-left: 20px;
 }
 
 .login svg {
     width: 1.5rem;
     height: 1.5rem;
     fill: #ffffff;
-}
-
-.header-1 img {
-    width: 3rem;
-    height: auto;
-    margin-right: 0.5rem;
 }
 
 .menu-toggle {
@@ -127,17 +131,18 @@
     margin: 3px 0;
 }
 
-.nav-links {
-    display: flex;
-    gap: 40px;
-    text-align: center;
-    height: auto;
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 30px;
+    }
 }
 
-
-/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
-/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
-/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
 
 @media (max-width: 768px) {
     .header-1 {
@@ -160,6 +165,7 @@
 
     .nav-links.active {
         display: flex;
+        align-items: center;
     }
 
     .nav-links a {
@@ -171,21 +177,29 @@
     .menu-toggle {
         display: flex;
     }
-
     .hea {
         flex-grow: 1;
         justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hea img {
+        width: 2.5rem;
+    }
+
+    .hea p {
+        font-size: 18px;
+    }
+    .divide {
+        display: none;
     }
 
     .login {
         margin-left: 0;
     }
-
-    .divide {
-        display: none;
-    }
 }
-
 
 /*-------------------BODY------------------------*/
 /*-------------------BODY------------------------*/

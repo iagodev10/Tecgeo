@@ -41,28 +41,27 @@
     /*--------------HEADER-------------*/
     /*--------------HEADER-------------*/ -->
 
-    <header class="header">
-        <div class="header-container">
+    <div class="header">
+        <div class="header-1">
             <div class="menu-toggle">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-
-            <nav class="nav-links">
-                <a href="historia.html">HISTÓRIA</a>
+            <div class="hea">
+                <a href="index.html">
+                    <img src="img/globo.jpg" alt="">
+                </a>
+                <a href="index.html">
+                    <p>TECGEO</p>
+                </a>
+            </div>
+            <div class="divide"></div>
+            <div class="nav-links">
                 <a href="servicos.html">SERVIÇOS</a>
                 <a href="sobre.html">SOBRE NÓS</a>
                 <a href="contatos.html">CONTATOS</a>
-            </nav>
-
-            <div class="logo">
-                <a href="index.html">
-                    <img src="img/globo.jpg" alt="Logo da TecGeo">
-                    <span>TECGEO</span>
-                </a>
             </div>
-
             <div class="login">
                 <a href="login.html">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -73,21 +72,16 @@
                 </a>
             </div>
         </div>
-    </header>
-
+    </div>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
-
+    
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navLinks.classList.remove('active');
-            }
-        });
     </script>
+    
 
     <!-- /*----------------------------1-GEO----------------------------*/
     /*----------------------------1-GEO----------------------------*/

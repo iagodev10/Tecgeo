@@ -44,90 +44,95 @@ body {
 /*-------------------------HEADER-----------------------*/
 
 .header {
-    width: 100%;
+    width: 100vw;
     height: 70px;
-    background-color: #000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.header-container {
-    width: 90%;
-    max-width: 1200px;
+.header-1 {
+    width: 100%;
+    max-width: 1100px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
 }
-
-/* LOGO CENTRALIZADA */
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.hea {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
-.logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 8px;
+.hea img {
+    width: 3rem;
+    height: auto;
+    margin-right: 0.5rem;
 }
 
-.logo a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.hea p {
+    font-size: 20px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 300;
     color: white;
-    font-size: 1.4rem;
-    font-weight: bold;
+    margin: 0;
 }
 
-/* NAVEGAÇÃO */
+.divide {
+    width: 2px;
+    height: 50px;
+    background-color: white;
+    margin: 0 2rem;
+}
+
 .nav-links {
     display: flex;
-    gap: 15px;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 40px;
+    white-space: nowrap;
 }
 
-.nav-links a {
-    color: white;
+.header-1 a {
     text-decoration: none;
+    color: #ffffff;
     font-size: 1rem;
     position: relative;
 }
 
-.nav-links a::after {
-    content: "";
+.header-1 a::after {
+    content: " ";
     width: 0;
     height: 2px;
     background-color: #ddd;
     position: absolute;
     bottom: -4px;
     left: 0;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
-.nav-links a:hover::after {
+.header-1 a:hover::after {
     width: 100%;
 }
 
-/* LOGIN */
 .login {
-    margin-left: 2rem;
+    margin-left: auto;
+    padding-left: 20px;
 }
 
 .login svg {
-    width: 24px;
-    height: 24px;
-    fill: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #ffffff;
 }
 
-/* MENU TOGGLE (MOBILE) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -137,49 +142,79 @@ body {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
-    margin: 4px 0;
+    background-color: #ffffff;
+    margin: 3px 0;
 }
-/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
-/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
-    .header-container {
+    .header-1 {
         justify-content: space-between;
+        width: 90%;
+        margin: auto;
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
         position: absolute;
         top: 70px;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        text-align: center;
+        z-index: 999;
+        gap: 0;
     }
 
     .nav-links.active {
         display: flex;
+        align-items: center;
     }
 
     .nav-links a {
-        padding: 15px;
+        padding: 1rem;
+        text-align: center;
+        margin: 0;
     }
 
     .menu-toggle {
         display: flex;
     }
-
-    .logo {
+    .hea {
+        flex-grow: 1;
+        justify-content: center;
+        position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .hea img {
+        width: 2.5rem;
+    }
+
+    .hea p {
+        font-size: 18px;
+    }
+    .divide {
+        display: none;
     }
 
     .login {
         margin-left: 0;
     }
 }
-
 
 /*-------------------------LOGIN------------------------*/
 /*-------------------------LOGIN------------------------*/
