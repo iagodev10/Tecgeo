@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style-login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+    <title>TECGEO - Login</title>
+    <link rel="icon" href="img/globo.jpg" type="image/png">
+</head>
+
+<body>
+
+    <!----------------VIDEO---------------->
+    <!----------------VIDEO---------------->
+    <!----------------VIDEO---------------->
+    <div class="video-login">
+        <video src="video/video-login.mp4" autoplay loop muted></video>
+    </div>
+
+    <!-----------------------HEADER----------------->
+    <!-----------------------HEADER----------------->
+    <!-----------------------HEADER----------------->
+    <div class="header">
+        <div class="header-1">
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="hea">
+                <a href="index.html">
+                    <img src="img/globo.jpg" alt="">
+                </a>
+                <a href="index.html">
+                    <p>TECGEO</p>
+                </a>
+            </div>
+            <div class="divide"></div>
+            <div class="nav-links">
+                <a href="servicos.html">SERVIÇOS</a>
+                <a href="sobre.html">SOBRE NÓS</a>
+                <a href="contatos.html">CONTATOS</a>
+            </div>
+            <div class="login">
+                <a href="login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    
+    <!----------------------LOGIN---------------->
+    <!----------------------LOGIN---------------->
+    <!----------------------LOGIN---------------->
+    <main class="wrapper">
+        <form action="login.php" method="post">
+            <h1>ENTRAR</h1>
+            <div class="input-box">
+                <input type="text" name="usuario" placeholder="Usuário" required />
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="senha" placeholder="Senha" required />
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" /> Lembrar-me
+                </label>
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+            <button type="submit" class="button">Entrar</button>
+            <div class="register-link">
+                <p>Não tem uma conta? <a href="#">Registre-se</a></p>
+            </div>
+        </form>
+    </main>
+
+    <!------------------FOOTER----------------------->
+    <!------------------FOOTER----------------------->
+    <!------------------FOOTER----------------------->
+    <footer class="footer">
+        <p>&copy; 2025 TECGEO - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

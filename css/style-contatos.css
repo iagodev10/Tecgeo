@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+.body {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------------IMAGEM-------------------*/
+/*------------------IMAGEM-------------------*/
+/*------------------IMAGEM-------------------*/
+
+.imagem {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.sob-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-align: center;
+    z-index: 1;
+}
+
+
+/*-----------------HEADER-------------*/
+/*-----------------HEADER-------------*/
+/*-----------------HEADER-------------*/
+.header {
+    width: 100vw;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.header-1 {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hea {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.hea img {
+    width: 3rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.hea p {
+    font-size: 20px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+}
+
+.divide {
+    width: 2px;
+    height: 50px;
+    background-color: white;
+    margin: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.header-1 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    position: relative;
+}
+
+.header-1 a::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.header-1 a:hover::after {
+    width: 100%;
+}
+
+.login {
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.login svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #ffffff;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 3px 0;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-1 {
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    .hea {
+        flex-grow: 1;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hea img {
+        width: 2.5rem;
+    }
+
+    .hea p {
+        font-size: 18px;
+    }
+    .divide {
+        display: none;
+    }
+
+    .login {
+        margin-left: 0;
+    }
+}
+
+/*----------------------CONTATOS------------------*/
+/*----------------------CONTATOS------------------*/
+/*----------------------CONTATOS------------------*/
+
+.geo-contatos {
+    width: 100%;
+    background-color: black;
+}
+
+.geo-1-contatos {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.geo-contatos-texto {
+    width: 40%;
+    margin: auto;
+    font-size: 20px;
+    text-align: left;
+    color: #ffffff;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.geo-contatos-texto button {
+    background-color: #000000;
+    padding: 20px;
+    font-size: 25px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 100%;
+    text-align: left;
+    border-left: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp {
+    background-color: #000000;
+}
+
+.whatsapp:hover {
+    background-color: #25D366;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.insta a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.insta:hover {
+    background-image: linear-gradient(45deg,
+            #405DE6, #5B51D8, #833AB4, #C13584,
+            #E1306C, #FD1D1D, #F56040, #FCAF45, #FFDC80);
+    border: none;
+    border-radius: 10px;
+}
+
+
+.geo-contatos-img {
+    width: 40%;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.geo-contatos-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*----------------------ENDEREÇOS------------------*/
+/*----------------------ENDEREÇOS------------------*/
+/*----------------------ENDEREÇOS------------------*/
+
+.enderecos {
+    width: 100%;
+    background-color: black;
+    padding-bottom: 70px;
+}
+
+.endereco-texto {
+    padding-top: 50px;
+    width: 80%;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+    text-align: left;
+    letter-spacing: 3px;
+}
+
+.cachoeira {
+    padding-bottom: 30px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+.mapa {
+    margin: auto;
+    width: 80%;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 500px;
+}
+
+/*----------------------------FOOTER----------------------------*/
+/*----------------------------FOOTER----------------------------*/
+/*----------------------------FOOTER----------------------------*/
+/*----------------------------FOOTER----------------------------*/
+
+.footer {
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    width: 80%;
+}
+
+.ultimo {
+    width: 80%;
+    border: 2px solid yellow;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ultimo ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+.ultimo ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.5s;
+}
+
+.ultimo ul li a:hover {
+    color: rgb(173, 167, 167);
+}
+
+.endereco {
+    margin-top: 20px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.end-1,
+.end-2 {
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+}
+
+.icons {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.icon {
+    width: 80%;
+    gap: 15px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

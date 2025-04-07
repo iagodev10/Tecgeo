@@ -1,0 +1,1021 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.body {
+    width: 100%;
+    height: 100vh;
+    background: url(../img/servico-equip.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.body-1 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.body-texto {
+    color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.body-texto p {
+    font-size: 23px;
+    margin-top: 10px;
+    max-width: 600px;
+}
+
+.button-geo {
+    margin-top: 30px;
+}
+
+.but {
+    display: inline-block;
+    font-size: 16px;
+    border: 2px solid white;
+    padding: 12px 24px;
+    background: transparent;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.but a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.but:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/*-----------------MEDIA-QUERIE -- IMAGEM -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- IMAGEM -- RESPONSIVE-------------*/
+
+@media (max-width: 768px) {
+    .body-texto {
+        font-size: 17px;
+    }
+
+    .body-texto p {
+        font-size: 17px;
+    }
+
+    .but {
+        font-size: 14px;
+    }
+}
+
+/*--------------HEADER-------------*/
+/*--------------HEADER-------------*/
+
+.header {
+    width: 100vw;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.header-1 {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hea {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.hea img {
+    width: 3rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+.hea p {
+    font-size: 20px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+}
+
+.divide {
+    width: 2px;
+    height: 50px;
+    background-color: white;
+    margin: 0 2rem;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.header-1 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    position: relative;
+}
+
+.header-1 a::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.header-1 a:hover::after {
+    width: 100%;
+}
+
+.login {
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.login svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #ffffff;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 3px 0;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-1 {
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+    .hea {
+        flex-grow: 1;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hea img {
+        width: 2.5rem;
+    }
+
+    .hea p {
+        font-size: 18px;
+    }
+    .divide {
+        display: none;
+    }
+
+    .login {
+        margin-left: 0;
+    }
+}
+
+
+/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- HEADER -- RESPONSIVE-------------*/
+
+@media (max-width: 768px) {
+    .header-1 {
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 999;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hea {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .login {
+        margin-left: 0;
+    }
+
+    .divide {
+        display: none;
+    }
+}
+
+
+/*----------------------------SLIDER----------------------------*/
+/*----------------------------SLIDER----------------------------*/
+/*----------------------------SLIDER----------------------------*/
+/*----------------------------SLIDER----------------------------*/
+
+.slider-servico {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.slider {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.item {
+    flex: 1;
+    overflow: hidden;
+    transition: flex 0.4s ease-in-out;
+    cursor: pointer;
+    position: relative;
+}
+
+.item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider:hover .item {
+    flex: 1;
+}
+
+.slider .item:hover {
+    flex: 3;
+}
+
+.texto {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    transform: translateY(-80%) rotate(-180deg);
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    writing-mode: vertical-rl;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* <!-----------------------SLIDER - AFTER----------------->
+    <!-----------------------SLIDER - AFTER----------------->
+    <!-----------------------SLIDER - AFTER-----------------> */
+.slider-after {
+    width: 100%;
+    background-image: url(../img/oi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 70vh;
+}
+
+/*----------------------------LOTEAMENTO----------------------------*/
+/*----------------------------LOTEAMENTO----------------------------*/
+/*----------------------------LOTEAMENTO----------------------------*/
+/*----------------------------LOTEAMENTO----------------------------*/
+
+.loteamento {
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.loteamento-titulo h1 {
+    padding-bottom: 30px;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-top: 30px;
+}
+
+/*------------------LOTEAMENTO - PARRAALAX------------*/
+/*------------------LOTEAMENTO - PARRAALAX------------*/
+
+#loteamento-parallax {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/loteamento.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#loteamento-parallax::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.parallax-lote {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.lote-titulo {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid white;
+    padding-bottom: 10px;
+}
+
+.lote-texto {
+    width: 100%;
+    max-width: 900px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-saiba-mais:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/*-----------------MEDIA-QUERIE -- LOTEAMENTO-PARALLAX -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- LOTEAMENTO-PARALLAX -- RESPONSIVE-------------*/
+@media (max-width: 768px) {
+    .parallax-lote {
+        width: 95%;
+    }
+
+    .lote-titulo {
+        font-size: 1.8rem;
+    }
+
+    .lote-texto {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+
+    .lote-texto p:nth-child(2) {
+        display: none;
+    }
+}
+
+
+/*----------------------------GEORREFERENCIAMENTO----------------------------*/
+/*----------------------------GEORREFERENCIAMENTO----------------------------*/
+/*----------------------------GEORREFERENCIAMENTO----------------------------*/
+/*----------------------------GEORREFERENCIAMENTO----------------------------*/
+
+#urbanos-rurais-parallax {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/servico-equip.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#urbanos-rurais-parallax::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.parallax-urbanos-rurais {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.urbanos-rurais-titulo-secundario {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid white;
+    padding-bottom: 10px;
+}
+
+.urbanos-rurais-texto {
+    width: 100%;
+    max-width: 900px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/*-----------------MEDIA-QUERIE -- URBANO -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- URBANO -- RESPONSIVE-------------*/
+@media (max-width: 768px) {
+    .parallax-urbanos-rurais {
+        width: 95%;
+    }
+
+    .urbanos-rurais-titulo-secundario {
+        font-size: 1.8rem;
+    }
+
+    .urbanos-rurais-texto {
+        font-size: 1rem;
+    }
+
+    .urbanos-rurais-texto p:nth-child(2) {
+        display: none;
+    }
+
+    .urbanos-rurais-texto::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+    }
+
+    .parallax-urbanos-rurais::after {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        background: white;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+}
+
+/*----------------------------URBANOS----------------------------*/
+/*----------------------------URBANOS----------------------------*/
+/*----------------------------URBANOS----------------------------*/
+/*----------------------------URBANOS----------------------------*/
+
+#georreferenciamento-parallax {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/urbanos.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#georreferenciamento-parallax::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.parallax-geo {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.geo-titulo {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid white;
+    padding-bottom: 10px;
+}
+
+.geo-texto {
+    width: 100%;
+    max-width: 900px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
+/*-----------------MEDIA-QUERIE -- GEO -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- GEO -- RESPONSIVE-------------*/
+@media (max-width: 768px) {
+    .parallax-geo {
+        width: 95%;
+    }
+
+    .geo-titulo {
+        font-size: 1.8rem;
+    }
+
+    .geo-texto {
+        font-size: 1rem;
+    }
+
+    .geo-texto p:nth-child(2) {
+        display: none;
+    }
+
+    .geo-texto::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+    }
+
+    .parallax-geo::after {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        background: white;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+}
+
+/*----------------------------RETIFICA----------------------------*/
+/*----------------------------RETIFICA----------------------------*/
+/*----------------------------RETIFICA----------------------------*/
+/*----------------------------RETIFICA----------------------------*/
+#retificacao-parallax {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/retifica.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#retificacao-parallax::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.parallax-retificacao {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.retificacao-titulo-secundario {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid white;
+    padding-bottom: 10px;
+}
+
+.retificacao-texto {
+    width: 100%;
+    max-width: 900px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
+/*-----------------MEDIA-QUERIE -- RETIFICA -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- RETIFICA -- RESPONSIVE-------------*/
+@media (max-width: 768px) {
+    .parallax-retificacao {
+        width: 95%;
+    }
+
+    .retificacao-titulo-secundario {
+        font-size: 1.8rem;
+    }
+
+    .retificacao-texto {
+        font-size: 1rem;
+    }
+
+    .retificacao-texto p:nth-child(2) {
+        display: none;
+    }
+
+    .retificacao-texto::after {
+        content: "";
+        display: block;
+        margin-top: 20px;
+    }
+
+    .parallax-retificacao::after {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        background: white;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+}
+
+/*----------------------CONTATOS------------------*/
+/*----------------------CONTATOS------------------*/
+/*----------------------CONTATOS------------------*/
+
+#geo-contatos {
+    width: 100%;
+    background-color: black;
+}
+
+.geo-1-contatos {
+    background-color: black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.geo-contatos-texto {
+    width: 40%;
+    margin: auto;
+    font-size: 20px;
+    text-align: left;
+    color: #ffffff;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.geo-contatos-texto button {
+    background-color: #000000;
+    padding: 20px;
+    font-size: 25px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    width: 100%;
+    text-align: left;
+    border-left: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp {
+    background-color: #000000;
+}
+
+.whatsapp:hover {
+    background-color: #25D366;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.insta a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.insta:hover {
+    background-image: linear-gradient(45deg,
+            #405DE6, #5B51D8, #833AB4, #C13584,
+            #E1306C, #FD1D1D, #F56040, #FCAF45, #FFDC80);
+    border: none;
+    border-radius: 10px;
+}
+
+
+.geo-contatos-img {
+    width: 40%;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.geo-contatos-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.geo-1-contatos-p {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.geo-contatos-img-2 {
+    display: none;
+}
+
+/*-----------------MEDIA-QUERIE -- CONTATOS -- RESPONSIVE-------------*/
+/*-----------------MEDIA-QUERIE -- CONTATOS -- RESPONSIVE-------------*/
+
+@media (max-width: 768px) {
+    .geo-contatos-img {
+        display: none;
+    }
+
+    .geo-contatos-img-2 {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 150px;
+        background-image: url(../img/contatos-2.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .geo-contatos-img-2 img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    #geo-contatos {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .geo-1-contatos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .geo-contatos-texto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .geo-contatos-texto a {
+        width: 100%;
+    }
+
+    .geo-contatos-texto button {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .whatsapp,
+    .insta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}
