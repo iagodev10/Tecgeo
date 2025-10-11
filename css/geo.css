@@ -1,0 +1,1461 @@
+/* ================== VARIÁVEIS CSS ================== */
+:root {
+  --cor-primaria: #2F308D;
+  /* Azul principal */
+  --cor-secundaria: #4A7C59;
+  /* Verde já existente, mantém equilíbrio */
+  --cor-accent: #7FB069;
+  /* Verde claro de destaque */
+  --cor-fundo: #F8F9FA;
+  /* Fundo neutro */
+  --cor-texto-primario: #2F308D;
+  /* Azul para títulos/texto */
+  --cor-texto-secundario: #FFFFFF;
+  /* Texto claro para contraste */
+  --cor-titulo: #2F308D;
+  /* Azul forte para títulos */
+  --cor-link: #4A7C59;
+  /* Verde link */
+  --cor-botao-fundo: #2F308D;
+  /* Azul forte para botões */
+  --cor-botao-texto: #FFFFFF;
+  /* Texto branco no botão */
+  --cor-botao-hover: #232466;
+  /* Azul mais escuro no hover */
+  --cor-icone: #7FB069;
+  /* Verde ícones */
+
+  --fonte-titulo: "Arial", sans-serif;
+  --fonte-texto: "Arial", sans-serif;
+  --box-shadow-leve: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medio: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-forte: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ================== IMAGEM PRINCIPAL ================== */
+.img-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.img-principal video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+/* ================== HEADER IGUAL AO INDEX ================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: #2F308D;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: var(--box-shadow-medio);
+}
+
+header.scrolled .logo {
+  color: var(--cor-texto-secundario);
+}
+
+header.scrolled .nav-list li a {
+  color: var(--cor-texto-secundario);
+}
+
+header.scrolled .mobile-menu div {
+  background: var(--cor-texto-secundario);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--fonte-titulo);
+  height: 8vh;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: var(--fonte-titulo);
+  text-decoration: none;
+  color: var(--cor-texto-secundario);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-list li a {
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-list li a:hover {
+  opacity: 0.8;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--cor-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: var(--cor-texto-secundario);
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ================== BANNER GEORREFERENCIAMENTO ================== */
+.banner-geo {
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.banner-geo h2 {
+  font-size: 2rem;
+  color: var(--cor-texto-secundario);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-geo p {
+  font-size: 1.2rem;
+  color: var(--cor-texto-secundario);
+  font-family: var(--fonte-texto);
+  margin-bottom: 25px;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.botao-primario {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  background-color: var(--cor-link);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-medio);
+}
+
+.botao-primario:hover {
+  background-color: var(--cor-botao-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-forte);
+}
+
+/* ================== O QUE É GEORREFERENCIAMENTO ================== */
+.oq-e-geo {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: var(--cor-fundo);
+  margin-top: 100vh;
+}
+
+.oq-e-geo-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oq-e-geo-texto {
+  flex: 1;
+}
+
+.oq-e-geo-texto h2 {
+  font-size: 2rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.oq-e-geo-texto > p {
+  font-size: 1.1rem;
+  color: var(--cor-texto-primario);
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.geo-beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.beneficio-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-leve);
+  transition: all 0.3s ease;
+}
+
+.beneficio-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-medio);
+}
+
+.beneficio-item i {
+  font-size: 2rem;
+  color: var(--cor-link);
+  background: rgba(74, 124, 89, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beneficio-item h4 {
+  font-size: 1.2rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.beneficio-item p {
+  color: var(--cor-texto-primario);
+  font-size: 0.95rem;
+}
+
+.oq-e-geo-img {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-forte);
+}
+
+.oq-e-geo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.oq-e-geo-img:hover img {
+  transform: scale(1.05);
+}
+
+/* ================== COMO FUNCIONA ================== */
+.como-funciona {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  text-align: center;
+}
+
+.como-funciona h2 {
+  font-size: 2rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.como-funciona-desc {
+  font-size: 1.1rem;
+  color: var(--cor-texto-primario);
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.processo-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.processo-step {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-medio);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.processo-step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-forte);
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cor-link);
+  background: rgba(74, 124, 89, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-titulo);
+  min-width: 60px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-icon {
+  margin-bottom: 15px;
+}
+
+.step-icon i {
+  font-size: 2.5rem;
+  color: var(--cor-accent);
+}
+
+.step-content h3 {
+  font-size: 1.4rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.step-content p {
+  font-size: 1rem;
+  color: var(--cor-texto-primario);
+  line-height: 1.6;
+}
+
+/* ================== TECNOLOGIAS ================== */
+.tecnologias {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: var(--cor-fundo);
+}
+
+.tecnologias-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tecnologias-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tecnologias-header h2 {
+  font-size: 2rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tecnologias-header p {
+  font-size: 1.1rem;
+  color: var(--cor-texto-primario);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.tech-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-medio);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(74, 124, 89, 0.1);
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-forte);
+  border-color: var(--cor-accent);
+}
+
+.tech-icon {
+  margin-bottom: 20px;
+}
+
+.tech-icon i {
+  font-size: 3rem;
+  color: var(--cor-link);
+  background: rgba(74, 124, 89, 0.1);
+  padding: 20px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-card h3 {
+  font-size: 1.3rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.tech-card p {
+  font-size: 1rem;
+  color: var(--cor-texto-primario);
+  line-height: 1.6;
+}
+
+/* ================== APLICAÇÕES ================== */
+.aplicacoes {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  text-align: center;
+}
+
+.aplicacoes h2 {
+  font-size: 2rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.aplicacoes-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aplicacao-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-medio);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.aplicacao-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-forte);
+}
+
+.aplicacao-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(74, 124, 89, 0.1);
+}
+
+.aplicacao-header i {
+  font-size: 2rem;
+  color: var(--cor-link);
+  background: rgba(74, 124, 89, 0.1);
+  padding: 15px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aplicacao-header h3 {
+  font-size: 1.3rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+.aplicacao-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.aplicacao-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--cor-texto-primario);
+  padding: 8px 0;
+}
+
+.aplicacao-card li::before {
+  content: "✓";
+  color: var(--cor-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ================== POR QUE TECGEO ================== */
+.pq-tecgeo {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: var(--cor-fundo);
+}
+
+.pq-tecgeo-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pq-tecgeo-content h2 {
+  font-size: 2rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.diferencial {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow-medio);
+  transition: all 0.3s ease;
+}
+
+.diferencial:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-forte);
+}
+
+.diferencial i {
+  font-size: 2.5rem;
+  color: var(--cor-link);
+  background: rgba(74, 124, 89, 0.1);
+  padding: 20px;
+  border-radius: 50%;
+  min-width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diferencial h4 {
+  font-size: 1.3rem;
+  color: var(--cor-titulo);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.diferencial p {
+  font-size: 1rem;
+  color: var(--cor-texto-primario);
+  line-height: 1.6;
+}
+
+/* ================== CONTATO GEORREFERENCIAMENTO ================== */
+.contato-geo {
+  width: 100%;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: white;
+}
+
+.contato-geo-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contato-geo-content {
+  flex: 1;
+}
+
+.contato-geo-content h2 {
+  font-size: 2rem;
+  font-family: var(--fonte-titulo);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.contato-geo-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.contato-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp,
+.btn-contato-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-medio);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+}
+
+.btn-contato-page {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-contato-page:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.contato-geo-img {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-forte);
+}
+
+.contato-geo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================== FOOTER IGUAL AO INDEX ================== */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #e0e0e0;
+  font-family: var(--fonte-texto);
+  padding: 60px 20px 20px;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-accent), var(--cor-secundaria));
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  text-align: center;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+.footer-info .footer-logo h3 {
+  font-size: 2rem;
+  color: var(--cor-accent);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.footer-tagline {
+  font-style: italic;
+  color: #bbb;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+.footer-info address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.contact-item i {
+  color: var(--cor-accent);
+  width: 20px;
+  text-align: center;
+}
+
+.footer-info a {
+  color: #4da6ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+  color: var(--cor-accent);
+}
+
+.footer-links ul,
+.footer-services ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links ul li a,
+.footer-services ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.footer-links ul li a:hover,
+.footer-services ul li a:hover {
+  color: var(--cor-accent);
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-icons a:hover {
+  background: var(--cor-accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(127, 176, 105, 0.4);
+}
+
+.footer-cta {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(127, 176, 105, 0.2);
+}
+
+.footer-cta p {
+  margin-bottom: 15px;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-btn:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #444;
+  text-align: center;
+}
+
+.footer-copy p {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
+}
+
+/* ================== RESPONSIVIDADE ================== */
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .oq-e-geo-container,
+  .processo-container,
+  .tecnologias-container,
+  .aplicacoes-container,
+  .pq-tecgeo-container,
+  .contato-geo-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  .oq-e-geo,
+  .como-funciona,
+  .tecnologias,
+  .aplicacoes,
+  .pq-tecgeo,
+  .contato-geo {
+    padding: 40px 15px;
+  }
+
+  .banner-geo {
+    padding: 60px 15px 40px;
+  }
+
+  .banner-geo h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .banner-geo p {
+    font-size: 1rem;
+    margin: 15px 0 25px;
+  }
+
+  .oq-e-geo-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .oq-e-geo-texto h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .oq-e-geo-texto > p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .beneficio-item {
+    padding: 15px;
+    margin: 0 5px;
+  }
+
+  .beneficio-item i {
+    font-size: 1.5rem;
+    min-width: 50px;
+    height: 50px;
+    padding: 12px;
+  }
+
+  .beneficio-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .beneficio-item p {
+    font-size: 0.9rem;
+  }
+
+  .processo-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .processo-step {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 15px;
+  }
+
+  .step-number {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tech-card {
+    padding: 20px 15px;
+  }
+
+  .aplicacoes-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .aplicacao-card {
+    margin: 0 5px;
+  }
+
+  .diferenciais-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+  .diferencial {
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .contato-geo-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contato-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn-whatsapp,
+  .btn-contato-page {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .oq-e-geo-container,
+  .processo-container,
+  .tecnologias-container,
+  .aplicacoes-container,
+  .pq-tecgeo-container,
+  .contato-geo-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .banner-geo h2 {
+    font-size: 2.5rem;
+  }
+
+  .banner-geo p {
+    font-size: 1.3rem;
+  }
+
+  .oq-e-geo-container {
+    flex-direction: column;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .oq-e-geo-container,
+  .processo-container,
+  .tecnologias-container,
+  .aplicacoes-container,
+  .pq-tecgeo-container,
+  .contato-geo-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-container {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 50px;
+  }
+
+  nav {
+    padding: 0 50px;
+  }
+
+  .nav-list {
+    gap: 40px;
+  }
+}
+
+/* Desktop Grande */
+@media (min-width: 1440px) {
+  .banner-geo h2 {
+    font-size: 3.5rem;
+  }
+
+  .banner-geo p {
+    font-size: 1.5rem;
+  }
+
+  .oq-e-geo-texto h2,
+  .como-funciona h2,
+  .tecnologias-header h2,
+  .aplicacoes h2,
+  .pq-tecgeo-content h2,
+  .contato-geo-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ================== MOBILE NAVIGATION ================== */
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 60vw;
+    height: 92vh;
+    background: rgba(44, 85, 48, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    gap: 0;
+  }
+
+  .nav-list li {
+    opacity: 0;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+  }
+
+  .banner-geo h2 {
+    font-size: 1.6rem;
+  }
+
+  .banner-geo p {
+    font-size: 1rem;
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+/* ================== MOBILE PEQUENO - ABAIXO DE 600PX ================== */
+@media (max-width: 599px) {
+  /* Seção Aplicações */
+  .aplicacoes {
+    padding: 30px 10px !important;
+  }
+
+  .aplicacoes h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .aplicacoes-container {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 0 5px;
+  }
+
+  .aplicacao-card {
+    margin: 0 !important;
+    padding: 15px 12px !important;
+    border-radius: 8px;
+  }
+
+  .aplicacao-header {
+    margin-bottom: 12px;
+  }
+
+  .aplicacao-header i {
+    font-size: 1.3rem !important;
+    margin-right: 8px;
+  }
+
+  .aplicacao-header h3 {
+    font-size: 1.1rem !important;
+    line-height: 1.2;
+  }
+
+  .aplicacao-card ul li {
+    font-size: 0.85rem !important;
+    padding: 6px 0;
+    line-height: 1.3;
+  }
+
+  /* Seção Por que escolher TecGeo */
+  .pq-tecgeo {
+    padding: 30px 10px !important;
+  }
+
+  .pq-tecgeo-content h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 25px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .diferenciais-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    padding: 0 5px;
+  }
+
+  .diferencial {
+    padding: 15px 12px !important;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .diferencial i {
+    font-size: 1.8rem !important;
+    margin-bottom: 10px;
+  }
+
+  .diferencial h4 {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .diferencial p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+
+  /* Seção Precisa de Georreferenciamento */
+  .contato-geo {
+    padding: 30px 10px !important;
+  }
+
+  .contato-geo-container {
+    flex-direction: column !important;
+    gap: 25px !important;
+    padding: 0 5px !important;
+  }
+
+  .contato-geo-content h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .contato-geo-content p {
+    font-size: 0.9rem !important;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .contato-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center;
+    width: 100%;
+  }
+
+  .btn-whatsapp,
+  .btn-contato-page {
+    width: 100% !important;
+    max-width: 260px !important;
+    padding: 12px 20px !important;
+    font-size: 0.9rem !important;
+    text-align: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .contato-geo-img {
+    width: 100% !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .contato-geo-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Ajustes gerais para telas muito pequenas */
+  .oq-e-geo-texto h2,
+  .como-funciona h2,
+  .tecnologias-header h2 {
+    font-size: 1.4rem !important;
+    line-height: 1.3;
+  }
+
+  .beneficio-item {
+    padding: 12px 10px !important;
+    margin: 0 2px !important;
+  }
+
+  .beneficio-item h4 {
+    font-size: 1rem !important;
+  }
+
+  .beneficio-item p {
+    font-size: 0.8rem !important;
+  }
+
+  .pq-tecgeo {
+    padding: 40px 15px !important;
+  }
+
+  .pq-tecgeo-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .pq-tecgeo-content h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  .diferenciais-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0;
+  }
+
+  .diferencial {
+    padding: 20px 15px !important;
+    margin: 0 5px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .diferencial i {
+    font-size: 2rem !important;
+    min-width: 60px !important;
+    height: 60px !important;
+    padding: 15px !important;
+    margin-bottom: 15px;
+  }
+
+  .diferencial h4 {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+    text-align: center;
+  }
+
+  .diferencial p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    text-align: center;
+    margin: 0;
+  }
+}

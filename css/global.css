@@ -1,0 +1,192 @@
+/* ================== VARIÁVEIS CSS ================== */
+:root {
+  --cor-primaria: #2F308D;
+  /* Azul principal */
+  --cor-secundaria: #4A7C59;
+  /* Verde já existente, mantém equilíbrio */
+  --cor-accent: #7FB069;
+  /* Verde claro de destaque */
+  --cor-fundo: #F8F9FA;
+  /* Fundo neutro */
+  --cor-texto-primario: #2F308D;
+  /* Azul para títulos/texto */
+  --cor-texto-secundario: #FFFFFF;
+  /* Texto claro para contraste */
+  --cor-titulo: #2F308D;
+  /* Azul forte para títulos */
+  --cor-link: #4A7C59;
+  /* Verde link */
+  --cor-botao-fundo: #2F308D;
+  /* Azul forte para botões */
+  --cor-botao-texto: #FFFFFF;
+  /* Texto branco no botão */
+  --cor-botao-hover: #232466;
+  /* Azul mais escuro no hover */
+  --cor-icone: #7FB069;
+  /* Verde ícones */
+
+  --fonte-titulo: "Arial", sans-serif;
+  --fonte-texto: "Arial", sans-serif;
+  --box-shadow-leve: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medio: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-forte: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/*--------------HEADER-------------*/
+/*--------------HEADER-------------*/
+
+.hea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hea p{
+    font-size: 20px;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.hea a:hover::after{
+    content: none;
+}
+.header {
+    width: 100vw; 
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px); 
+    margin-bottom: 50px;
+}
+
+.header-1 {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-1 a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-right: 1rem;
+    position: relative;
+}
+.header-1 a:first-child{
+    font-size: 3rem; 
+    letter-spacing: 0.3em; 
+    font-weight: bold; 
+    color: #ffffff; 
+    text-transform: uppercase; 
+    margin-right: auto; 
+}
+.divide {
+    height: 50px;
+    width: 2px;
+    background-color: white;
+    margin: 0 1rem;
+}
+
+.header-1 a::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.header-1 a:hover::after {
+    width: 100%;
+}
+.login {
+    margin-left: 2rem;
+}
+.login svg {
+    width: 1.5rem;
+    height: 1.5rem; 
+    fill: #ffffff; 
+}
+.header-1 img {
+    width: 3rem; 
+    height: auto;
+    margin-right: 0.5rem; 
+}
+.header-1 a:first-child::after{
+    content: none;
+}
+
+
+/*--------------------FOOTER----------------*/
+/*-------------------FOOTER---------------------*/
+
+.footer{
+    width: 100%;
+    background-color: rgb(65, 65, 65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.footer-content{
+    width: 80%;
+}
+.ultimo{
+    width: 80%;
+    border: 2px solid yellow;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ultimo ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+.ultimo ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.5s;
+}
+
+.ultimo ul li a:hover {
+    color: rgb(173, 167, 167);
+}
+
+.endereco{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.end-1, .end-2{
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+}
+
+.icons{
+    width: 100%;
+    
+}
+.icon{
+    width: 80%;
+    gap: 15px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
