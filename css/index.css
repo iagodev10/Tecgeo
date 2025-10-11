@@ -1,24 +1,37 @@
 /* ================== VARIÁVEIS CSS ================== */
 :root {
-    --cor-primaria: #2c5530;
-    --cor-secundaria: #4a7c59;
-    --cor-accent: #7fb069;
-    --cor-fundo: #f8f9fa;
-    --cor-texto-primario: #333333;
-    --cor-texto-secundario: #ffffff;
-    --cor-titulo: #2c5530;
-    --cor-link: #4a7c59;
-    --cor-botao-fundo: #4a7c59;
-    --cor-botao-texto: #ffffff;
-    --cor-botao-hover: #2c5530;
-    --cor-icone: #7fb069;
-    --fonte-titulo: "Poppins", sans-serif;
-    --fonte-texto: "Poppins", sans-serif;
-    --box-shadow-leve: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --box-shadow-medio: 0 4px 8px rgba(0, 0, 0, 0.15);
-    --box-shadow-forte: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
+  --cor-primaria: #2F308D;
+  /* Azul principal */
+  --cor-secundaria: #4A7C59;
+  /* Verde já existente, mantém equilíbrio */
+  --cor-accent: #7FB069;
+  /* Verde claro de destaque */
+  --cor-fundo: #F8F9FA;
+  /* Fundo neutro */
+  --cor-texto-primario: #2F308D;
+  /* Azul para títulos/texto */
+  --cor-texto-secundario: #FFFFFF;
+  /* Texto claro para contraste */
+  --cor-titulo: #2F308D;
+  /* Azul forte para títulos */
+  --cor-link: #4A7C59;
+  /* Verde link */
+  --cor-botao-fundo: #2F308D;
+  /* Azul forte para botões */
+  --cor-botao-texto: #FFFFFF;
+  /* Texto branco no botão */
+  --cor-botao-hover: #232466;
+  /* Azul mais escuro no hover */
+  --cor-icone: #7FB069;
+  /* Verde ícones */
+
+  --fonte-titulo: "Arial", sans-serif;
+  --fonte-texto: "Arial", sans-serif;
+  --box-shadow-leve: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-medio: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-forte: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
   /* ================== RESET E BASE ================== */
   * {
     margin: 0;
@@ -66,12 +79,12 @@
   }
   
   /* Header com cor fixa durante scroll */
-  header.scrolled {
-    background: rgba(44, 85, 48, 0.95);
+ header.scrolled {
+    background: #2F308D;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     box-shadow: var(--box-shadow-medio);
-  }
+}
   
   header.scrolled .logo {
     color: var(--cor-texto-secundario);
